@@ -6,6 +6,7 @@ import numpy as np
 from tabulate import tabulate
 
 from pi_leibnitz import calc_pi_sum, calc_pi_sum_power_10
+from multiprocessing_pi import calc_pi_with_processes
 
 def calc_pi_sum_thread(start_iteration, max_iteration, result_list, index):
     iteration = max_iteration - start_iteration
@@ -72,12 +73,19 @@ if __name__ == "__main__":
     dt2 = time.process_time() - t2
     diff_numba = math.pi - numba_pi_approx
 
+    # Multiprocessing Approximation
+    t3 = time.process_time()
+    pi_multiprocessing_approx = calc_pi_with_processes(max_iter, 4)
+    dt3 = time.process_time() - t3
+    diff_multiprocessing = math.pi - pi_multiprocessing_approx
+
     # Tabellarische Ausgabe
     table = [
         ["Leibniz", pi_approx, diff, dt],
         ["Leibniz-Power(10)", pi_pow10_approx, diff_power_10, dt_pow10],
         ["GIL-Threads", gil_pi_approx, diff_gil, dt1],
-        ["Numba-Threads", numba_pi_approx, diff_numba, dt2]
+        ["Numba-Threads", numba_pi_approx, diff_numba, dt2],
+        ["Multiprocessing", pi_multiprocessing_approx, diff_multiprocessing, dt3]
     ]
     headers = ["Methode", "Approximation von π", "Differenz zu π", "Zeit (Sekunden)"]
 
