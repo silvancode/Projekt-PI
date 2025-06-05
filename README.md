@@ -34,7 +34,7 @@ Dieses Projekt enthält ein Python-Skript `pi.py`, das die Zahl π (Pi) mithilfe
     
     ```bash
     git clone https://github.com/silvancode/Projekt-PI.git
-    cd Projekt-Parallel-PI
+    cd Projekt-PI
     ```
     
 2. Virtuelle Umgebung erstellen (empfohlen):
