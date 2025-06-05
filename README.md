@@ -196,16 +196,7 @@ python pi.py -i 8000000 --with-process -p 4 -s 2000000
 - Zerlegt in 4 Segmente à 2 000 000, rechnet mit 4 Prozessen.
     
 
-### 8. Vergleich: Mehrprozess-Funktion aus `multiprocessing_pi.py`
-
-```bash
-python pi.py -i 5000000 --with-process -p 4
-```
-
-- Verwendet intern `calc_pi_with_processes(5000000, 4)` und vergleicht Laufzeit.
-    
-
-### 9. Nur π-Wert ausgeben (für externe Aufrufe)
+### 8. Nur π-Wert ausgeben (für externe Aufrufe)
 
 ```bash
 python pi.py -i 5000000 --only-pi
