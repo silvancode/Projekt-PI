@@ -33,7 +33,7 @@ Dieses Projekt enthält ein Python-Skript `pi.py`, das die Zahl π (Pi) mithilfe
 1. Repository klonen oder Dateien kopieren:
     
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/silvancode/Projekt-PI.git
     cd Projekt-Parallel-PI
     ```
     
@@ -50,9 +50,6 @@ Dieses Projekt enthält ein Python-Skript `pi.py`, das die Zahl π (Pi) mithilfe
     ```bash
     pip install -r requirements.txt
     ```
-    
-4. Sicherstellen, dass `pi_leibnitz.py` und `multiprocessing_pi.py` im gleichen Verzeichnis liegen.
-    
 
 ## Aufbau von `pi.py`
 
