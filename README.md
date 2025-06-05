@@ -136,7 +136,7 @@ Am Ende sammelt `main()` alle aktivierten Methoden in `results_table` und gibt e
 ### 1. Serielle Berechnung
 
 ```bash
-python3 pi.py -i 1000000
+python pi.py -i 1000000
 ```
 
 - Näherung mit 1 000 000 Iterationen (Leibniz), zeigt Differenz und Laufzeit.
@@ -145,7 +145,7 @@ python3 pi.py -i 1000000
 ### 2. Power-of-10-Zwischenausgaben
 
 ```bash
-python3 pi.py -i 1000000
+python pi.py -i 1000000
 ```
 
 - Führt dieselbe serielle Summation durch, zeigt periodisch Laufzeit und Fehler, liefert Endergebnis.
@@ -154,7 +154,7 @@ python3 pi.py -i 1000000
 ### 3. GIL-Threads (z. B. 4 Threads)
 
 ```bash
-python3 pi.py -i 5000000 --with-gil -t 4
+python pi.py -i 5000000 --with-gil -t 4
 ```
 
 - Teilt 5 000 000 Iterationen auf 4 Threads auf.
@@ -163,7 +163,7 @@ python3 pi.py -i 5000000 --with-gil -t 4
 ### 4. Producer/Consumer-Threads (z. B. 4 Threads, Segmentsize 1 000 000)
 
 ```bash
-python3 pi.py -i 10000000 --with-thread -t 4 -s 1000000
+python pi.py -i 10000000 --with-thread -t 4 -s 1000000
 ```
 
 - Bildet Segmente zu je 1 000 000 Iterationen, verteilt dynamisch auf 4 Threads.
@@ -172,7 +172,7 @@ python3 pi.py -i 10000000 --with-thread -t 4 -s 1000000
 ### 5. Numba (parallel)
 
 ```bash
-python3 pi.py -i 2000000 --with-numba
+python pi.py -i 2000000 --with-numba
 ```
 
 - Rechnet 2 000 000 Iterationen parallel ohne GIL.
@@ -181,7 +181,7 @@ python3 pi.py -i 2000000 --with-numba
 ### 6. Thread-Pool (K = 8, Segmentsize 500 000)
 
 ```bash
-python3 pi.py -i 8000000 --pool 8 -s 500000
+python pi.py -i 8000000 --pool 8 -s 500000
 ```
 
 - Zerlegt in 16 Segmente à 500 000, rechnet mit 8 Threads.
@@ -190,7 +190,7 @@ python3 pi.py -i 8000000 --pool 8 -s 500000
 ### 7. Process-Pool (p = 4, Segmentsize 2 000 000)
 
 ```bash
-python3 pi.py -i 8000000 --with-process -p 4 -s 2000000
+python pi.py -i 8000000 --with-process -p 4 -s 2000000
 ```
 
 - Zerlegt in 4 Segmente à 2 000 000, rechnet mit 4 Prozessen.
@@ -199,7 +199,7 @@ python3 pi.py -i 8000000 --with-process -p 4 -s 2000000
 ### 8. Vergleich: Mehrprozess-Funktion aus `multiprocessing_pi.py`
 
 ```bash
-python3 pi.py -i 5000000 --with-process -p 4
+python pi.py -i 5000000 --with-process -p 4
 ```
 
 - Verwendet intern `calc_pi_with_processes(5000000, 4)` und vergleicht Laufzeit.
@@ -208,7 +208,7 @@ python3 pi.py -i 5000000 --with-process -p 4
 ### 9. Nur π-Wert ausgeben (für externe Aufrufe)
 
 ```bash
-python3 pi.py -i 5000000 --only-pi
+python pi.py -i 5000000 --only-pi
 ```
 
 - Gibt nur eine Fließkommazahl mit π-Wert zurück, ohne Tabelle.
